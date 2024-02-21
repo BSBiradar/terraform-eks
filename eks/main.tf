@@ -21,7 +21,6 @@ resource "aws_eks_node_group" "node" {
   node_group_name = "cbz-node"
   node_role_arn   = var.aws_node_role_arn
   subnet_ids      = var.subnet_ids
-  ami_type = var.ami
   instance_types = ["t3.medium","t3.large"]
   disk_size = "20"
 

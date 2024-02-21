@@ -14,7 +14,3 @@ variable "aws_node_role_arn" {
     default = "arn:aws:iam::344118038900:role/eksnodepolicy"
 }
 
-variable "ami" {
-    default = "ami-1234567890abcdef0"
-  
-}
