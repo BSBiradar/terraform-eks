@@ -33,6 +33,7 @@ resource "aws_eks_node_group" "cbz_node" {
   update_config {
     max_unavailable = 1
   }
+  depends_on = [ aws_eks_cluster.cbz_eks ]
 
 
 }
