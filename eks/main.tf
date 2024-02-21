@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_eks_cluster" "cbz_eks" {
-  name     = "cbz-cluster"
+  name     = var.cluster_name
   role_arn = var.aws_iam_role_arn
   version = "1.29"
 
@@ -16,8 +16,8 @@ resource "aws_eks_cluster" "cbz_eks" {
 
 }
 
-resource "aws_eks_node_group" "node" {
-  cluster_name    = "cbz-cluster"
+resource "aws_eks_node_group" "cbz_node" {
+  cluster_name    = var.cluster_name
   node_group_name = "cbz-node"
   node_role_arn   = var.aws_node_role_arn
   subnet_ids      = var.subnet_ids

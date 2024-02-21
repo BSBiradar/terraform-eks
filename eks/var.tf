@@ -1,3 +1,6 @@
+variable "cluster_name" {
+  default = "cbz-cluster"
+}
 variable "region" {
   default = "ap-south-1"
 }
