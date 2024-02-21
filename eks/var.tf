@@ -15,6 +15,6 @@ variable "aws_node_role_arn" {
 }
 
 variable "ami" {
-    default = "ami-0e670eb768a5fc3d4"
+    default = "ami-1234567890abcdef0"
   
 }
