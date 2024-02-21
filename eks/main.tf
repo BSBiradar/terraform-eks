@@ -1,11 +1,11 @@
 provider "aws" {
-    region = "var.region"
+    region = var.region
   
 }
 
 resource "aws_eks_cluster" "cbz_eks" {
   name     = "cbz-cluster"
-  role_arn = "var.aws_iam_role_arn"
+  role_arn = var.aws_iam_role_arn
   version = "1.29"
 
 
@@ -19,9 +19,9 @@ resource "aws_eks_cluster" "cbz_eks" {
 resource "aws_eks_node_group" "node" {
   cluster_name    = "cbz-cluster"
   node_group_name = "cbz-node"
-  node_role_arn   = "var.aws_node_role_arn"
+  node_role_arn   = var.aws_node_role_arn
   subnet_ids      = var.subnet_ids
-  ami_type = "var.ami"
+  ami_type = var.ami
   instance_types = ["t3.medium","t3.large"]
   disk_size = "20"
 
