@@ -11,7 +11,7 @@ resource "aws_eks_cluster" "cbz_eks" {
 
 
   vpc_config {
-    subnet_ids = "var.subnet_ids"
+    subnet_ids = var.subnet_ids
   }
 
 }
@@ -20,9 +20,9 @@ resource "aws_eks_node_group" "node" {
   cluster_name    = "cbz-cluster"
   node_group_name = "cbz-node"
   node_role_arn   = "var.aws_node_role_arn"
-  subnet_ids      = "var.subnet_id"
+  subnet_ids      = var.subnet_ids
   ami_type = "var.ami"
-  instance_types = "t3.medium"
+  instance_types = ["t3.medium","t3.large"]
   disk_size = "20"
 
   scaling_config {
