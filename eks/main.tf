@@ -3,18 +3,18 @@ provider "aws" {
   
 }
 
-resource "aws_eks_cluster" "cbz_eks" {
-  name     = var.cluster_name
-  role_arn = var.aws_iam_role_arn
-  version = "1.29"
+# resource "aws_eks_cluster" "cbz_eks" {
+#   name     = var.cluster_name
+#   role_arn = var.aws_iam_role_arn
+#   version = "1.29"
 
 
 
-  vpc_config {
-    subnet_ids = var.subnet_ids
-  }
+#   vpc_config {
+#     subnet_ids = var.subnet_ids
+#   }
 
-}
+# }
 
 resource "aws_eks_node_group" "cbz_node" {
   cluster_name    = var.cluster_name
